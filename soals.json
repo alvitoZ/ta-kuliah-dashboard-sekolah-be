@@ -1,0 +1,879 @@
+[{
+  "_id": {
+    "$oid": "64f863f4dae9e9c4c97e1683"
+  },
+  "c1": [
+    {
+      "nomor": 1,
+      "soal": "empat kali empat",
+      "kategori": "c1",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff8d"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff8e"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff8f"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff90"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff91"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f864c1235fe83ab0ddff8c"
+      }
+    },
+    {
+      "nomor": 2,
+      "soal": "sepuluh tambah tiga",
+      "kategori": "c1",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff93"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff94"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff95"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff96"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff97"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f864c1235fe83ab0ddff92"
+      }
+    },
+    {
+      "nomor": 3,
+      "soal": "dua kali tujuh",
+      "kategori": "c1",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff99"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff9a"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff9b"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff9c"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff9d"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f864c1235fe83ab0ddff98"
+      }
+    },
+    {
+      "nomor": 4,
+      "soal": "satu tambah satu",
+      "kategori": "c1",
+      "jawaban": [
+        {
+          "soal": "dua",
+          "status": true,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddff9f"
+          }
+        },
+        {
+          "soal": "empat",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddffa0"
+          }
+        },
+        {
+          "soal": "lima",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddffa1"
+          }
+        },
+        {
+          "soal": "tiga",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddffa2"
+          }
+        },
+        {
+          "soal": "enam",
+          "status": false,
+          "_id": {
+            "$oid": "64f864c1235fe83ab0ddffa3"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f864c1235fe83ab0ddff9e"
+      }
+    }
+  ],
+  "c2": [
+    {
+      "nomor": 1,
+      "soal": "empat kali empat",
+      "kategori": "c2",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff67"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff68"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff69"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff6a"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff6b"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f8644f235fe83ab0ddff66"
+      }
+    },
+    {
+      "nomor": 2,
+      "soal": "sepuluh tambah tiga",
+      "kategori": "c2",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff6d"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff6e"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff6f"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff70"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff71"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f8644f235fe83ab0ddff6c"
+      }
+    },
+    {
+      "nomor": 3,
+      "soal": "dua kali tujuh",
+      "kategori": "c2",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff73"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff74"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff75"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff76"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8644f235fe83ab0ddff77"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f8644f235fe83ab0ddff72"
+      }
+    }
+  ],
+  "c3": [
+    {
+      "nomor": 1,
+      "soal": "empat kali empat",
+      "kategori": "c3",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffd1"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffd2"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffd3"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffd4"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffd5"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f864fb235fe83ab0ddffd0"
+      }
+    },
+    {
+      "nomor": 2,
+      "soal": "sepuluh tambah tiga",
+      "kategori": "c3",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffd7"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffd8"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffd9"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffda"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffdb"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f864fb235fe83ab0ddffd6"
+      }
+    },
+    {
+      "nomor": 3,
+      "soal": "dua kali tujuh",
+      "kategori": "c3",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffdd"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffde"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffdf"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffe0"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f864fb235fe83ab0ddffe1"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f864fb235fe83ab0ddffdc"
+      }
+    }
+  ],
+  "c4": [
+    {
+      "nomor": 1,
+      "soal": "empat kali empat",
+      "kategori": "c4",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffe4"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffe5"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffe6"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffe7"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffe8"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f86503235fe83ab0ddffe3"
+      }
+    },
+    {
+      "nomor": 2,
+      "soal": "sepuluh tambah tiga",
+      "kategori": "c4",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffea"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffeb"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffec"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffed"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddffee"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f86503235fe83ab0ddffe9"
+      }
+    },
+    {
+      "nomor": 3,
+      "soal": "dua kali tujuh",
+      "kategori": "c4",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddfff0"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddfff1"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddfff2"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddfff3"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86503235fe83ab0ddfff4"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f86503235fe83ab0ddffef"
+      }
+    }
+  ],
+  "c5": [
+    {
+      "nomor": 1,
+      "soal": "empat kali empat",
+      "kategori": "c5",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0ddfff7"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0ddfff8"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0ddfff9"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0ddfffa"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0ddfffb"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f8650d235fe83ab0ddfff6"
+      }
+    },
+    {
+      "nomor": 2,
+      "soal": "sepuluh tambah tiga",
+      "kategori": "c5",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0ddfffd"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0ddfffe"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0ddffff"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0de0000"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0de0001"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f8650d235fe83ab0ddfffc"
+      }
+    },
+    {
+      "nomor": 3,
+      "soal": "dua kali tujuh",
+      "kategori": "c5",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0de0003"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0de0004"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0de0005"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0de0006"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f8650d235fe83ab0de0007"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f8650d235fe83ab0de0002"
+      }
+    }
+  ],
+  "c6": [
+    {
+      "nomor": 1,
+      "soal": "empat kali empat",
+      "kategori": "c6",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de000a"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de000b"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de000c"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de000d"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de000e"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f86516235fe83ab0de0009"
+      }
+    },
+    {
+      "nomor": 2,
+      "soal": "sepuluh tambah tiga",
+      "kategori": "c6",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0010"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0011"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0012"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0013"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0014"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f86516235fe83ab0de000f"
+      }
+    },
+    {
+      "nomor": 3,
+      "soal": "dua kali tujuh",
+      "kategori": "c6",
+      "jawaban": [
+        {
+          "soal": "dua belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0016"
+          }
+        },
+        {
+          "soal": "empat belas",
+          "status": true,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0017"
+          }
+        },
+        {
+          "soal": "lima belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0018"
+          }
+        },
+        {
+          "soal": "tiga belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de0019"
+          }
+        },
+        {
+          "soal": "enam belas",
+          "status": false,
+          "_id": {
+            "$oid": "64f86516235fe83ab0de001a"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64f86516235fe83ab0de0015"
+      }
+    }
+  ],
+  "__v": 0,
+  "createdAt": {
+    "$date": "2023-09-06T11:35:16.917Z"
+  },
+  "updatedAt": {
+    "$date": "2023-09-06T11:40:06.144Z"
+  }
+}]
