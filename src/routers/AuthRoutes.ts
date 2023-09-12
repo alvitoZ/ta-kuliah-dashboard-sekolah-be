@@ -18,6 +18,7 @@ class AuthRoutes implements IRouter {
     this.router.post("/register", validate, AuthController.registers);
     this.router.post("/login", validate, AuthController.login);
     this.router.put("/update-email/:id", auth, AuthController.updateEmail);
+    this.router.put("/edit-profil/:id", auth, AuthController.editProfil);
   }
 }
 

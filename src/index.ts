@@ -11,6 +11,7 @@ import multer, { Multer } from "multer";
 
 import AuthRoutes from "./routers/AuthRoutes";
 import SoalRoutes from "./routers/SoalRoutes";
+import MateriRoutes from "./routers/MateriRoutes";
 import { Config } from "./config/Config";
 
 mongoose.set("strictQuery", false);
@@ -59,11 +60,7 @@ class App {
 
     this.app.use("/api/v1/auth", AuthRoutes); //login resgister
     this.app.use("/api/v1/soal", SoalRoutes); //soal
-    this.app.get("/ping", async (req, res) => {
-      return res.json({
-        msg: "kitan!!!",
-      });
-    });
+    this.app.use("/api/v1/materi", MateriRoutes); //
   }
 }
 

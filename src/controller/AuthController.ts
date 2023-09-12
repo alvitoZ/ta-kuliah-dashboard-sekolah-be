@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import HashFunction from "../utils/HashFunction";
 import { UserModel } from "../models/UserModel";
+import RemoveImage from "../utils/RemoveImage";
 
 class AuthController {
   registers = async (req: Request, res: Response): Promise<Response> => {
@@ -93,6 +94,30 @@ class AuthController {
       { _id: req.params.id },
       {
         $set: {
+          email: email,
+        },
+      }
+    );
+
+    return res.status(200).json({
+      data: user,
+    });
+  };
+
+  editProfil = async (req: Request, res: Response): Promise<Response> => {
+    let { email, fullname, password } = req.body;
+    const image: string = req.file?.filename || "default";
+
+    const deleteImage = await UserModel.findOne({ _id: req.params.id });
+    RemoveImage(deleteImage?.image);
+
+    const user = await UserModel.updateMany(
+      { _id: req.params.id },
+      {
+        $set: {
+          password: password,
+          fullname: fullname,
+          image: image,
           email: email,
         },
       }
