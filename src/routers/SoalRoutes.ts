@@ -17,9 +17,12 @@ class SoalRoutes implements IRouter {
     this.router.get("/list-soal/:category", auth, SoalController.index);
     this.router.get("/nilai-siswa", auth, SoalController.showNilai);
     this.router.get("/nilai", auth, SoalController.getNilai);
-    this.router.get("/coba", SoalController.coba);
+    this.router.get("/nilai/:id", auth, SoalController.showNilaiById);
+    this.router.get("/nilai-grafik", SoalController.getNilaiForGrafik);
     this.router.post("/post-jawaban", auth, SoalController.postJawaban);
     this.router.post("/post-soal/:category", auth, SoalController.create);
+    this.router.put("/edit-nilai/:id", auth, SoalController.editNilai);
+    this.router.delete("/nilai/:id", auth, SoalController.deleteNilaiById);
   }
 }
 

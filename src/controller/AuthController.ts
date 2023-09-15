@@ -67,7 +67,7 @@ class AuthController {
     let { role } = res.locals.user;
     if (role === "siswa" || role === "guru") {
       return res.status(403).json({
-        msg: "siswa cannot access getUser",
+        msg: "siswa/guru cannot access getUser",
       });
     }
     const user: any = await UserModel.find({ role: req.params.role });
@@ -87,9 +87,30 @@ class AuthController {
     });
   }
 
+  async getUserById(req: Request, res: Response): Promise<any> {
+    const { fullname, role } = res.locals.user;
+    if (role === "siswa" || role === "guru") {
+      return res.status(403).json({
+        msg: "siswa/guru cannot access getUserById",
+      });
+    }
+    const user: any = await UserModel.findOne({
+      _id: req.params.id,
+    });
+
+    return res.status(200).json({
+      data: user,
+    });
+  }
+
   updateEmail = async (req: Request, res: Response): Promise<Response> => {
     let { email } = req.body;
-
+    const { fullname, role } = res.locals.user;
+    if (role === "siswa" || role === "guru") {
+      return res.status(403).json({
+        msg: "siswa/guru cannot access updateEmail",
+      });
+    }
     const user = await UserModel.updateMany(
       { _id: req.params.id },
       {
@@ -118,6 +139,38 @@ class AuthController {
           password: password,
           fullname: fullname,
           image: image,
+          email: email,
+        },
+      }
+    );
+
+    return res.status(200).json({
+      data: user,
+    });
+  };
+
+  editUser = async (req: Request, res: Response): Promise<Response> => {
+    const { role } = res.locals.user;
+    if (role === "siswa" || role === "guru") {
+      return res.status(403).json({
+        msg: "siswa/guru cannot access editUser",
+      });
+    }
+
+    let { email, fullname, password } = req.body;
+    const check = UserModel.findOne({ _id: req.params.id });
+    if (!check) {
+      return res.status(404).json({
+        msg: "gagal user tidak ditemukan",
+        data: check,
+      });
+    }
+    const user = await UserModel.updateMany(
+      { _id: req.params.id },
+      {
+        $set: {
+          password: password,
+          fullname: fullname,
           email: email,
         },
       }

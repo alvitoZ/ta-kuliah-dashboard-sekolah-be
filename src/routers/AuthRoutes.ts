@@ -15,10 +15,17 @@ class AuthRoutes implements IRouter {
   public routes(): void {
     this.router.get("/user/:role", auth, AuthController.getUser);
     this.router.get("/user-role", auth, AuthController.showUser);
+    this.router.get("/user-id/:id", auth, AuthController.getUserById);
     this.router.post("/register", validate, AuthController.registers);
-    this.router.post("/login", validate, AuthController.login);
+    this.router.post("/login", AuthController.login);
     this.router.put("/update-email/:id", auth, AuthController.updateEmail);
-    this.router.put("/edit-profil/:id", auth, AuthController.editProfil);
+    this.router.put(
+      "/edit-profil/:id",
+      validate,
+      auth,
+      AuthController.editProfil
+    );
+    this.router.put("/edit-user/:id", validate, auth, AuthController.editUser);
   }
 }
 

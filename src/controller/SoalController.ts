@@ -164,9 +164,43 @@ class SoalController {
     });
   }
 
+  async getNilaiForGrafik(req: Request, res: Response): Promise<any> {
+    const result = await NilaiModel.find();
+    // result.reverse();
+    return res.status(200).json({
+      data: result.reverse().slice(0, 6),
+    });
+  }
+
   async showNilai(req: Request, res: Response): Promise<any> {
     const { fullname, role } = res.locals.user;
     const result = await NilaiModel.find({ nama: fullname });
+    return res.status(200).json({
+      data: result,
+    });
+  }
+
+  async showNilaiById(req: Request, res: Response): Promise<any> {
+    const { role } = res.locals.user;
+    if (role === "siswa") {
+      return res.status(403).json({
+        msg: "siswa cannot access showNilaiById",
+      });
+    }
+    const result = await NilaiModel.findOne({ _id: req.params.id });
+    return res.status(200).json({
+      data: result,
+    });
+  }
+
+  async deleteNilaiById(req: Request, res: Response): Promise<any> {
+    const { role } = res.locals.user;
+    if (role === "siswa") {
+      return res.status(403).json({
+        msg: "siswa cannot access deleteNilaiById",
+      });
+    }
+    const result = await NilaiModel.findByIdAndDelete({ _id: req.params.id });
     return res.status(200).json({
       data: result,
     });
@@ -220,6 +254,40 @@ class SoalController {
         break;
     }
   }
+
+  editNilai = async (req: Request, res: Response): Promise<Response> => {
+    const { role } = res.locals.user;
+    if (role === "siswa") {
+      return res.status(403).json({
+        msg: "siswa cannot access editNilai",
+      });
+    }
+
+    const check = NilaiModel.findOne({ _id: req.params.id });
+
+    if (!check) {
+      return res.status(404).json({
+        msg: "gagal id tidak ditemukan",
+        data: check,
+      });
+    }
+    let { nama, nilai, kategori } = req.body;
+    const nilaiUser = await NilaiModel.updateMany(
+      { _id: req.params.id },
+      {
+        $set: {
+          nama: nama,
+          nilai: nilai,
+          kategori: kategori,
+        },
+      }
+    );
+
+    return res.status(200).json({
+      data: nilaiUser,
+      msg: `nilai siswa dengan id:${req.params.id} berhasil di edit`,
+    });
+  };
 }
 
 export default new SoalController();
