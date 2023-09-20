@@ -1,8 +1,12 @@
 import { Request, Response, NextFunction } from "express";
-import RemoveImage from "../utils/RemoveImage";
-import { SoalModel } from "../models/SoalModel";
 import { NilaiModel } from "../models/NilaiModel";
 import { TotalJawabanBenar } from "../utils/TotalJawabanBenar";
+import { C1Model } from "../models/C1Model";
+import { C2Model } from "../models/C2Model";
+import { C3Model } from "../models/C3Model";
+import { C4Model } from "../models/C4Model";
+import { C5Model } from "../models/C5Model";
+import { C6Model } from "../models/C6Model";
 
 interface Jawaban {
   soal: string;
@@ -10,7 +14,6 @@ interface Jawaban {
 }
 
 type Kategori = {
-  nomor: number;
   kategori: string;
   soal: string;
   jawaban: Jawaban[];
@@ -19,7 +22,7 @@ type Kategori = {
 type Soal = Kategori[];
 
 class SoalController {
-  async create(req: Request, res: Response): Promise<any> {
+  async createSoal(req: Request, res: Response): Promise<any> {
     const input: Soal = req.body;
     const Data: Kategori[] = [];
     for (let entry of input) {
@@ -32,7 +35,6 @@ class SoalController {
       }
 
       let soals = {
-        nomor: entry.nomor,
         kategori: req.params.category,
         soal: entry.soal,
         jawaban: jawabans,
@@ -44,9 +46,7 @@ class SoalController {
     switch (req.params.category) {
       case "c1":
         {
-          const result = await SoalModel.updateMany({
-            c1: Data,
-          });
+          const result = await C1Model.insertMany(Data);
           res.status(200).json({
             msg: `create soal ${req.params.category} berhasil`,
             data: result,
@@ -55,9 +55,7 @@ class SoalController {
         break;
       case "c2":
         {
-          const result = await SoalModel.updateMany({
-            c2: Data,
-          });
+          const result = await C2Model.insertMany(Data);
           res.status(200).json({
             msg: `create soal ${req.params.category} berhasil`,
             data: result,
@@ -66,9 +64,7 @@ class SoalController {
         break;
       case "c3":
         {
-          const result = await SoalModel.updateMany({
-            c3: Data,
-          });
+          const result = await C3Model.insertMany(Data);
           res.status(200).json({
             msg: `create soal ${req.params.category} berhasil`,
             data: result,
@@ -77,9 +73,7 @@ class SoalController {
         break;
       case "c4":
         {
-          const result = await SoalModel.updateMany({
-            c4: Data,
-          });
+          const result = await C4Model.insertMany(Data);
           res.status(200).json({
             msg: `create soal ${req.params.category} berhasil`,
             data: result,
@@ -88,9 +82,7 @@ class SoalController {
         break;
       case "c5":
         {
-          const result = await SoalModel.updateMany({
-            c5: Data,
-          });
+          const result = await C5Model.insertMany(Data);
           res.status(200).json({
             msg: `create soal ${req.params.category} berhasil`,
             data: result,
@@ -99,11 +91,181 @@ class SoalController {
         break;
       case "c6":
         {
-          const result = await SoalModel.updateMany({
-            c6: Data,
-          });
+          const result = await C6Model.insertMany(Data);
           res.status(200).json({
             msg: `create soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      default:
+        res.status(404).json({
+          msg: "wrong kategori",
+        });
+        break;
+    }
+  }
+
+  async updateSoal(req: Request, res: Response): Promise<any> {
+    const { soal } = req.body;
+
+    switch (req.params.category) {
+      case "c1":
+        {
+          const result = await C1Model.updateMany(
+            { _id: req.params.id },
+            {
+              $set: {
+                soal: soal,
+              },
+            }
+          );
+          res.status(200).json({
+            msg: `update soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c2":
+        {
+          const result = await C2Model.updateMany(
+            { _id: req.params.id },
+            {
+              $set: {
+                soal: soal,
+              },
+            }
+          );
+          res.status(200).json({
+            msg: `update soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c3":
+        {
+          const result = await C3Model.updateMany(
+            { _id: req.params.id },
+            {
+              $set: {
+                soal: soal,
+              },
+            }
+          );
+          res.status(200).json({
+            msg: `update soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c4":
+        {
+          const result = await C4Model.updateMany(
+            { _id: req.params.id },
+            {
+              $set: {
+                soal: soal,
+              },
+            }
+          );
+          res.status(200).json({
+            msg: `update soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c5":
+        {
+          const result = await C5Model.updateMany(
+            { _id: req.params.id },
+            {
+              $set: {
+                soal: soal,
+              },
+            }
+          );
+          res.status(200).json({
+            msg: `update soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c6":
+        {
+          const result = await C6Model.updateMany(
+            { _id: req.params.id },
+            {
+              $set: {
+                soal: soal,
+              },
+            }
+          );
+          res.status(200).json({
+            msg: `update soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      default:
+        res.status(404).json({
+          msg: "wrong kategori",
+        });
+        break;
+    }
+  }
+
+  async deleteSoal(req: Request, res: Response): Promise<any> {
+    switch (req.params.category) {
+      case "c1":
+        {
+          const result = await C1Model.findOneAndDelete({ _id: req.query.id });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c2":
+        {
+          const result = await C2Model.findOneAndDelete({ _id: req.params.id });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c3":
+        {
+          const result = await C3Model.findOneAndDelete({ _id: req.params.id });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c4":
+        {
+          const result = await C4Model.findOneAndDelete({ _id: req.params.id });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c5":
+        {
+          const result = await C5Model.findOneAndDelete({ _id: req.params.id });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c6":
+        {
+          const result = await C6Model.findOneAndDelete({ _id: req.params.id });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
             data: result,
           });
         }
@@ -136,7 +298,7 @@ class SoalController {
       });
     } else {
       const data = TotalJawabanBenar(Data);
-      const result = await NilaiModel.insertMany({
+      await NilaiModel.insertMany({
         nama: fullname,
         nilai: (10 / data.benar.length + data.salah.length) * data.benar.length,
         kategori: input[0].kategori,
@@ -146,7 +308,6 @@ class SoalController {
         total_salah: data.salah.length,
         nilai: (10 / data.benar.length + data.salah.length) * data.benar.length,
         kategori: input[0].kategori,
-        data: result,
       });
     }
   }
@@ -206,46 +367,56 @@ class SoalController {
     });
   }
 
-  async coba(req: Request, res: Response): Promise<any> {
-    const soal: any = await SoalModel.find();
-    return res.status(200).json({
-      data: soal[0].c1,
-    });
-  }
-
   async index(req: Request, res: Response): Promise<any> {
     // const { username, id } = res.locals.user;
-    const soal = await SoalModel.find();
     switch (req.params.category) {
       case "c1":
-        res.status(200).json({
-          data: soal[0].c1,
-        });
+        {
+          const soal = await C1Model.find();
+          res.status(200).json({
+            data: soal,
+          });
+        }
         break;
       case "c2":
-        res.status(200).json({
-          data: soal[0].c2,
-        });
+        {
+          const soal = await C2Model.find();
+          res.status(200).json({
+            data: soal,
+          });
+        }
         break;
       case "c3":
-        res.status(200).json({
-          data: soal[0].c3,
-        });
+        {
+          const soal = await C3Model.find();
+          res.status(200).json({
+            data: soal,
+          });
+        }
         break;
       case "c4":
-        res.status(200).json({
-          data: soal[0].c4,
-        });
+        {
+          const soal = await C4Model.find();
+          res.status(200).json({
+            data: soal,
+          });
+        }
         break;
       case "c5":
-        res.status(200).json({
-          data: soal[0].c5,
-        });
+        {
+          const soal = await C5Model.find();
+          res.status(200).json({
+            data: soal,
+          });
+        }
         break;
       case "c6":
-        res.status(200).json({
-          data: soal[0].c6,
-        });
+        {
+          const soal = await C6Model.find();
+          res.status(200).json({
+            data: soal,
+          });
+        }
         break;
       default:
         res.status(404).json({

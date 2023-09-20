@@ -4,7 +4,6 @@ interface Jawaban {
 }
 
 type Kategori = {
-  nomor: number;
   kategori: string;
   soal: string;
   jawaban: Jawaban;
