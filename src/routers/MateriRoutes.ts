@@ -14,7 +14,10 @@ class BlogRoutes implements IRouter {
 
   public routes(): void {
     this.router.get("/", MateriController.getMateri);
+    this.router.get("/:id", auth, MateriController.showMateri);
     this.router.post("/", auth, MateriController.create);
+    this.router.put("/:id", auth, MateriController.update);
+    this.router.delete("/:id", auth, MateriController.delete);
   }
 }
 

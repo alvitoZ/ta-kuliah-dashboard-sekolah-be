@@ -16,17 +16,6 @@ class ImageController {
     });
   }
 
-  async getOnlyImages(req: Request, res: Response): Promise<any> {
-    const images = [];
-    const result = await ImageModel.find();
-    for (let data of result) {
-      images.push(`${process.env.ORIGIN_IMAGES}/${data.image}`);
-    }
-    return res.status(200).json({
-      data: images,
-    });
-  }
-
   async postImage(req: Request, res: Response): Promise<any> {
     const { fullname, role } = res.locals.user;
     if (role === "siswa") {

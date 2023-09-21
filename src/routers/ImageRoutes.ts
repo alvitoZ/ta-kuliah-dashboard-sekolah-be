@@ -14,7 +14,6 @@ class ImageRoutes implements IRouter {
 
   public routes(): void {
     this.router.get("/", auth, ImageController.getImages);
-    this.router.get("/images", auth, ImageController.getOnlyImages);
     this.router.post("/", auth, ImageController.postImage);
     this.router.delete("/:id", auth, ImageController.deleteImage);
   }

@@ -105,12 +105,6 @@ class AuthController {
 
   updateEmail = async (req: Request, res: Response): Promise<Response> => {
     let { email } = req.body;
-    const { fullname, role } = res.locals.user;
-    if (role === "siswa" || role === "guru") {
-      return res.status(403).json({
-        msg: "siswa/guru cannot access updateEmail",
-      });
-    }
     const user = await UserModel.updateMany(
       { _id: req.params.id },
       {
@@ -150,14 +144,7 @@ class AuthController {
   };
 
   editUser = async (req: Request, res: Response): Promise<Response> => {
-    const { role } = res.locals.user;
-    if (role === "siswa" || role === "guru") {
-      return res.status(403).json({
-        msg: "siswa/guru cannot access editUser",
-      });
-    }
-
-    let { email, fullname, password } = req.body;
+    let { email, fullname, password, gender } = req.body;
     const check = UserModel.findOne({ _id: req.params.id });
     if (!check) {
       return res.status(404).json({
