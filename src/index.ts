@@ -44,6 +44,15 @@ class App {
     this.app.use(morgan("dev"));
     this.app.use(compression());
     this.app.use(cors());
+    this.app.use((_: Request, res: Response, next: NextFunction) => {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+      );
+      res.setHeader("Access-Control-Allow-Headers", "content-type");
+      next();
+    });
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
     this.app.use("/images", express.static(path.join("images"))); //gambar
