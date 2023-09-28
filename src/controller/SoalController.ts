@@ -119,6 +119,14 @@ class SoalController {
       switch (req.params.category) {
         case "c1":
           {
+            const check = await C1Model.findOne({
+              _id: req.query.id,
+            });
+            if (!check) {
+              return res.status(404).json({
+                msg: `soal not found`,
+              });
+            }
             const result = await C1Model.updateMany(
               { _id: req.params.id },
               {
@@ -135,6 +143,14 @@ class SoalController {
           break;
         case "c2":
           {
+            const check = await C2Model.findOne({
+              _id: req.query.id,
+            });
+            if (!check) {
+              return res.status(404).json({
+                msg: `soal not found`,
+              });
+            }
             const result = await C2Model.updateMany(
               { _id: req.params.id },
               {
@@ -151,6 +167,14 @@ class SoalController {
           break;
         case "c3":
           {
+            const check = await C3Model.findOne({
+              _id: req.query.id,
+            });
+            if (!check) {
+              return res.status(404).json({
+                msg: `soal not found`,
+              });
+            }
             const result = await C3Model.updateMany(
               { _id: req.params.id },
               {
@@ -167,6 +191,14 @@ class SoalController {
           break;
         case "c4":
           {
+            const check = await C4Model.findOne({
+              _id: req.query.id,
+            });
+            if (!check) {
+              return res.status(404).json({
+                msg: `soal not found`,
+              });
+            }
             const result = await C4Model.updateMany(
               { _id: req.params.id },
               {
@@ -183,6 +215,14 @@ class SoalController {
           break;
         case "c5":
           {
+            const check = await C5Model.findOne({
+              _id: req.query.id,
+            });
+            if (!check) {
+              return res.status(404).json({
+                msg: `soal not found`,
+              });
+            }
             const result = await C5Model.updateMany(
               { _id: req.params.id },
               {
@@ -199,6 +239,14 @@ class SoalController {
           break;
         case "c6":
           {
+            const check = await C6Model.findOne({
+              _id: req.query.id,
+            });
+            if (!check) {
+              return res.status(404).json({
+                msg: `soal not found`,
+              });
+            }
             const result = await C6Model.updateMany(
               { _id: req.params.id },
               {
@@ -257,6 +305,14 @@ class SoalController {
         break;
       case "c2":
         {
+          const check = await C2Model.findOne({
+            _id: req.query.id,
+          });
+          if (!check) {
+            return res.status(404).json({
+              msg: `soal not found`,
+            });
+          }
           const result = await C2Model.findByIdAndDelete({
             _id: req.params.id,
           });
@@ -268,6 +324,14 @@ class SoalController {
         break;
       case "c3":
         {
+          const check = await C3Model.findOne({
+            _id: req.query.id,
+          });
+          if (!check) {
+            return res.status(404).json({
+              msg: `soal not found`,
+            });
+          }
           const result = await C3Model.findByIdAndDelete({
             _id: req.params.id,
           });
@@ -279,6 +343,14 @@ class SoalController {
         break;
       case "c4":
         {
+          const check = await C4Model.findOne({
+            _id: req.query.id,
+          });
+          if (!check) {
+            return res.status(404).json({
+              msg: `soal not found`,
+            });
+          }
           const result = await C4Model.findByIdAndDelete({
             _id: req.params.id,
           });
@@ -290,6 +362,14 @@ class SoalController {
         break;
       case "c5":
         {
+          const check = await C5Model.findOne({
+            _id: req.query.id,
+          });
+          if (!check) {
+            return res.status(404).json({
+              msg: `soal not found`,
+            });
+          }
           const result = await C5Model.findByIdAndDelete({
             _id: req.params.id,
           });
@@ -301,6 +381,14 @@ class SoalController {
         break;
       case "c6":
         {
+          const check = await C6Model.findOne({
+            _id: req.query.id,
+          });
+          if (!check) {
+            return res.status(404).json({
+              msg: `soal not found`,
+            });
+          }
           const result = await C6Model.findByIdAndDelete({
             _id: req.params.id,
           });
