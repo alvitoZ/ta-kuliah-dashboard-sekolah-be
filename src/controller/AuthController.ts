@@ -6,166 +6,227 @@ import RemoveImage from "../utils/RemoveImage";
 class AuthController {
   registers = async (req: Request, res: Response): Promise<Response> => {
     let { fullname, password, email, gender, role } = req.body;
-    const fullName: any = await UserModel.findOne({ fullname: fullname });
 
-    //  checkUser
-    if (fullName) {
-      return res.status(400).json({
-        msg: "user failed/nama udah ada yg make",
+    try {
+      const fullName: any = await UserModel.findOne({ fullname: fullname });
+
+      //  checkUser
+      if (fullName) {
+        return res.status(400).json({
+          msg: "user failed/nama udah ada yg make",
+        });
+      }
+      // const hashed: string = await HashFunction.hash(password);
+      const user = await UserModel.insertMany({
+        fullname: fullname,
+        password: password,
+        email: email,
+        gender: gender,
+        role: role,
+      });
+
+      return res.status(200).json({
+        msg: `register sebagai ${role} berhasil`,
+        data: user,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
       });
     }
-    // const hashed: string = await HashFunction.hash(password);
-    const user = await UserModel.insertMany({
-      fullname: fullname,
-      password: password,
-      email: email,
-      gender: gender,
-      role: role,
-    });
-
-    return res.status(200).json({
-      msg: `register sebagai ${role} berhasil`,
-      data: user,
-    });
   };
 
   async login(req: Request, res: Response): Promise<any> {
     //cari data user by username
     let { fullname, password } = req.body;
-    const user: any = await UserModel.findOne({
-      fullname: fullname,
-    });
 
-    //  checkUser
-    if (!user) {
-      return res.status(400).json({ msg: "user failed" });
-    }
-
-    //check password
-    let compare: boolean = password === user.password;
-
-    // generate token
-    if (compare) {
-      let token = HashFunction.generate(
-        user.fullname,
-        user.gender,
-        user.password,
-        user.email,
-        user.role
-      );
-      return res.status(200).json({
-        msg: `login sebagai ${user.role} berhasil`,
-        role: user.role,
-        token: token,
+    try {
+      const user: any = await UserModel.findOne({
+        fullname: fullname,
       });
-    } else {
-      return res.status(400).json({ msg: "auth failed" });
+
+      //  checkUser
+      if (!user) {
+        return res.status(400).json({ msg: "user failed" });
+      }
+
+      //check password
+      let compare: boolean = password === user.password;
+
+      // generate token
+      if (compare) {
+        let token = HashFunction.generate(
+          user.fullname,
+          user.gender,
+          user.password,
+          user.email,
+          user.role
+        );
+        return res.status(200).json({
+          msg: `login sebagai ${user.role} berhasil`,
+          role: user.role,
+          token: token,
+        });
+      } else {
+        return res.status(400).json({ msg: "auth failed" });
+      }
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
+      });
     }
   }
 
   async getUser(req: Request, res: Response): Promise<any> {
     let { role } = res.locals.user;
-    if (role === "siswa" || role === "guru") {
-      return res.status(403).json({
-        msg: "siswa/guru cannot access getUser",
+
+    try {
+      if (role === "siswa" || role === "guru") {
+        return res.status(403).json({
+          msg: "siswa/guru cannot access getUser",
+        });
+      }
+      const user: any = await UserModel.find({ role: req.params.role });
+      return res.status(200).json({
+        data: user,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
       });
     }
-    const user: any = await UserModel.find({ role: req.params.role });
-    return res.status(200).json({
-      data: user,
-    });
   }
 
   async showUser(req: Request, res: Response): Promise<any> {
     const { fullname, role } = res.locals.user;
-    const user: any = await UserModel.findOne({
-      fullname: fullname,
-    });
+    try {
+      const user: any = await UserModel.findOne({
+        fullname: fullname,
+      });
 
-    return res.status(200).json({
-      data: user,
-    });
+      return res.status(200).json({
+        data: user,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
+      });
+    }
   }
 
   async getUserById(req: Request, res: Response): Promise<any> {
     const { fullname, role } = res.locals.user;
-    if (role === "siswa" || role === "guru") {
-      return res.status(403).json({
-        msg: "siswa/guru cannot access getUserById",
+    try {
+      if (role === "siswa" || role === "guru") {
+        return res.status(403).json({
+          msg: "siswa/guru cannot access getUserById",
+        });
+      }
+      const user: any = await UserModel.findOne({
+        _id: req.params.id,
+      });
+
+      return res.status(200).json({
+        data: user,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
       });
     }
-    const user: any = await UserModel.findOne({
-      _id: req.params.id,
-    });
-
-    return res.status(200).json({
-      data: user,
-    });
   }
 
   updateEmail = async (req: Request, res: Response): Promise<Response> => {
     let { email } = req.body;
-    const user = await UserModel.updateMany(
-      { _id: req.params.id },
-      {
-        $set: {
-          email: email,
-        },
-      }
-    );
 
-    return res.status(200).json({
-      data: user,
-    });
+    try {
+      const user = await UserModel.updateMany(
+        { _id: req.params.id },
+        {
+          $set: {
+            email: email,
+          },
+        }
+      );
+
+      return res.status(200).json({
+        data: user,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
+      });
+    }
   };
 
   editProfil = async (req: Request, res: Response): Promise<Response> => {
     let { email, fullname, password } = req.body;
     const image: string = req.file?.filename || "default";
 
-    const deleteImage = await UserModel.findOne({ _id: req.params.id });
-    RemoveImage(deleteImage?.image);
+    try {
+      const deleteImage = await UserModel.findOne({ _id: req.params.id });
+      RemoveImage(deleteImage?.image);
 
-    const user = await UserModel.updateMany(
-      { _id: req.params.id },
-      {
-        $set: {
-          password: password,
-          fullname: fullname,
-          image: image,
-          email: email,
-        },
-      }
-    );
+      const user = await UserModel.updateMany(
+        { _id: req.params.id },
+        {
+          $set: {
+            password: password,
+            fullname: fullname,
+            image: image,
+            email: email,
+          },
+        }
+      );
 
-    return res.status(200).json({
-      data: user,
-    });
+      return res.status(200).json({
+        data: user,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
+      });
+    }
   };
 
   editUser = async (req: Request, res: Response): Promise<Response> => {
     let { email, fullname, password, gender } = req.body;
-    const check = UserModel.findOne({ _id: req.params.id });
-    if (!check) {
-      return res.status(404).json({
-        msg: "gagal user tidak ditemukan",
-        data: check,
+
+    try {
+      const check = UserModel.findOne({ _id: req.params.id });
+      if (!check) {
+        return res.status(404).json({
+          msg: "gagal user tidak ditemukan",
+          data: check,
+        });
+      }
+      const user = await UserModel.updateMany(
+        { _id: req.params.id },
+        {
+          $set: {
+            password: password,
+            fullname: fullname,
+            email: email,
+          },
+        }
+      );
+
+      return res.status(200).json({
+        data: user,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
       });
     }
-    const user = await UserModel.updateMany(
-      { _id: req.params.id },
-      {
-        $set: {
-          password: password,
-          fullname: fullname,
-          email: email,
-        },
-      }
-    );
-
-    return res.status(200).json({
-      data: user,
-    });
   };
 }
 export default new AuthController();

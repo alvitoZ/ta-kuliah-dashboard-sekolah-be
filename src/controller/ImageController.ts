@@ -5,51 +5,72 @@ import { ImageModel } from "../models/ImageModel";
 class ImageController {
   async getImages(req: Request, res: Response): Promise<any> {
     const { role } = res.locals.user;
-    if (role === "siswa") {
-      return res.status(403).json({
-        msg: "siswa cannot access getImages",
+    try {
+      if (role === "siswa") {
+        return res.status(403).json({
+          msg: "siswa cannot access getImages",
+        });
+      }
+      const result = await ImageModel.find();
+      return res.status(200).json({
+        data: result,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
       });
     }
-    const result = await ImageModel.find();
-    return res.status(200).json({
-      data: result,
-    });
   }
 
   async postImage(req: Request, res: Response): Promise<any> {
     const { fullname, role } = res.locals.user;
-    if (role === "siswa") {
-      return res.status(403).json({
-        msg: "siswa cannot access postGambar",
+    try {
+      if (role === "siswa") {
+        return res.status(403).json({
+          msg: "siswa cannot access postGambar",
+        });
+      }
+
+      let { alt } = req.body;
+      const image: string = req.file?.filename || "default";
+
+      const gambar = await ImageModel.insertMany({
+        image: image,
+        alt: alt,
+      });
+
+      return res.status(200).json({
+        msg: "create materi berhasil",
+        data: gambar,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
       });
     }
-
-    let { alt } = req.body;
-    const image: string = req.file?.filename || "default";
-
-    const gambar = await ImageModel.insertMany({
-      image: image,
-      alt: alt,
-    });
-
-    return res.status(200).json({
-      msg: "create materi berhasil",
-      data: gambar,
-    });
   }
 
   async deleteImage(req: Request, res: Response): Promise<any> {
     const { role } = res.locals.user;
-    if (role === "siswa") {
-      return res.status(403).json({
-        msg: "siswa cannot access deleteImage",
+    try {
+      if (role === "siswa") {
+        return res.status(403).json({
+          msg: "siswa cannot access deleteImage",
+        });
+      }
+      const result = await ImageModel.findByIdAndDelete({ _id: req.params.id });
+      RemoveImage(result?.image);
+      return res.status(200).json({
+        data: result,
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
       });
     }
-    const result = await ImageModel.findByIdAndDelete({ _id: req.params.id });
-    RemoveImage(result?.image);
-    return res.status(200).json({
-      data: result,
-    });
   }
 }
 
