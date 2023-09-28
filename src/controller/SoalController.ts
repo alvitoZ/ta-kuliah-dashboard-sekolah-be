@@ -120,7 +120,7 @@ class SoalController {
         case "c1":
           {
             const check = await C1Model.findOne({
-              _id: req.query.id,
+              _id: req.params.id,
             });
             if (!check) {
               return res.status(404).json({
@@ -144,7 +144,7 @@ class SoalController {
         case "c2":
           {
             const check = await C2Model.findOne({
-              _id: req.query.id,
+              _id: req.params.id,
             });
             if (!check) {
               return res.status(404).json({
@@ -168,7 +168,7 @@ class SoalController {
         case "c3":
           {
             const check = await C3Model.findOne({
-              _id: req.query.id,
+              _id: req.params.id,
             });
             if (!check) {
               return res.status(404).json({
@@ -192,7 +192,7 @@ class SoalController {
         case "c4":
           {
             const check = await C4Model.findOne({
-              _id: req.query.id,
+              _id: req.params.id,
             });
             if (!check) {
               return res.status(404).json({
@@ -216,7 +216,7 @@ class SoalController {
         case "c5":
           {
             const check = await C5Model.findOne({
-              _id: req.query.id,
+              _id: req.params.id,
             });
             if (!check) {
               return res.status(404).json({
@@ -240,7 +240,7 @@ class SoalController {
         case "c6":
           {
             const check = await C6Model.findOne({
-              _id: req.query.id,
+              _id: req.params.id,
             });
             if (!check) {
               return res.status(404).json({
@@ -287,7 +287,7 @@ class SoalController {
       case "c1":
         {
           const check = await C1Model.findOne({
-            _id: req.query.id,
+            _id: req.params.id,
           });
           if (!check) {
             return res.status(404).json({
@@ -295,7 +295,7 @@ class SoalController {
             });
           }
           const result = await C1Model.findByIdAndDelete({
-            _id: req.query.id,
+            _id: req.params.id,
           });
           res.status(200).json({
             msg: `delete soal ${req.params.category} berhasil`,
@@ -306,7 +306,7 @@ class SoalController {
       case "c2":
         {
           const check = await C2Model.findOne({
-            _id: req.query.id,
+            _id: req.params.id,
           });
           if (!check) {
             return res.status(404).json({
@@ -325,7 +325,7 @@ class SoalController {
       case "c3":
         {
           const check = await C3Model.findOne({
-            _id: req.query.id,
+            _id: req.params.id,
           });
           if (!check) {
             return res.status(404).json({
@@ -344,7 +344,7 @@ class SoalController {
       case "c4":
         {
           const check = await C4Model.findOne({
-            _id: req.query.id,
+            _id: req.params.id,
           });
           if (!check) {
             return res.status(404).json({
@@ -363,7 +363,7 @@ class SoalController {
       case "c5":
         {
           const check = await C5Model.findOne({
-            _id: req.query.id,
+            _id: req.params.id,
           });
           if (!check) {
             return res.status(404).json({
@@ -382,7 +382,7 @@ class SoalController {
       case "c6":
         {
           const check = await C6Model.findOne({
-            _id: req.query.id,
+            _id: req.params.id,
           });
           if (!check) {
             return res.status(404).json({
