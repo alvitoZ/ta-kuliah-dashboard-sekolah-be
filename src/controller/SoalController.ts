@@ -228,86 +228,86 @@ class SoalController {
   }
 
   async deleteSoal(req: Request, res: Response): Promise<any> {
-    const result = await C1Model.findByIdAndDelete({
-      _id: req.params.id,
-    });
-    res.status(200).json({
-      msg: `delete soal ${req.params.category} berhasil`,
-      data: result,
-    });
-    // switch (req.params.category) {
-    //   case "c1":
-    //     {
-    //       const result = await C1Model.findByIdAndDelete({
-    //         _id: req.query.id,
-    //       });
-    //       res.status(200).json({
-    //         msg: `delete soal ${req.params.category} berhasil`,
-    //         data: result,
-    //       });
-    //     }
-    //     break;
-    //   case "c2":
-    //     {
-    //       const result = await C2Model.findByIdAndDelete({
-    //         _id: req.params.id,
-    //       });
-    //       res.status(200).json({
-    //         msg: `delete soal ${req.params.category} berhasil`,
-    //         data: result,
-    //       });
-    //     }
-    //     break;
-    //   case "c3":
-    //     {
-    //       const result = await C3Model.findByIdAndDelete({
-    //         _id: req.params.id,
-    //       });
-    //       res.status(200).json({
-    //         msg: `delete soal ${req.params.category} berhasil`,
-    //         data: result,
-    //       });
-    //     }
-    //     break;
-    //   case "c4":
-    //     {
-    //       const result = await C4Model.findByIdAndDelete({
-    //         _id: req.params.id,
-    //       });
-    //       res.status(200).json({
-    //         msg: `delete soal ${req.params.category} berhasil`,
-    //         data: result,
-    //       });
-    //     }
-    //     break;
-    //   case "c5":
-    //     {
-    //       const result = await C5Model.findByIdAndDelete({
-    //         _id: req.params.id,
-    //       });
-    //       res.status(200).json({
-    //         msg: `delete soal ${req.params.category} berhasil`,
-    //         data: result,
-    //       });
-    //     }
-    //     break;
-    //   case "c6":
-    //     {
-    //       const result = await C6Model.findByIdAndDelete({
-    //         _id: req.params.id,
-    //       });
-    //       res.status(200).json({
-    //         msg: `delete soal ${req.params.category} berhasil`,
-    //         data: result,
-    //       });
-    //     }
-    //     break;
-    //   default:
-    //     res.status(404).json({
-    //       msg: "wrong kategori",
-    //     });
-    //     break;
-    // }
+    // const result = await C1Model.findByIdAndDelete({
+    //   _id: req.params.id,
+    // });
+    // res.status(200).json({
+    //   msg: `delete soal ${req.params.category} berhasil`,
+    //   data: result,
+    // });
+    switch (req.params.category) {
+      case "c1":
+        {
+          const result = await C1Model.findByIdAndDelete({
+            _id: req.query.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c2":
+        {
+          const result = await C2Model.findByIdAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c3":
+        {
+          const result = await C3Model.findByIdAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c4":
+        {
+          const result = await C4Model.findByIdAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c5":
+        {
+          const result = await C5Model.findByIdAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c6":
+        {
+          const result = await C6Model.findByIdAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      default:
+        res.status(404).json({
+          msg: "wrong kategori",
+        });
+        break;
+    }
   }
 
   async postJawaban(req: Request, res: Response): Promise<any> {
