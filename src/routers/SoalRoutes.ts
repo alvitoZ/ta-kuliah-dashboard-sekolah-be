@@ -68,7 +68,6 @@ class SoalRoutes implements IRouter {
     );
     this.router.delete(
       "/delete-soal/:category/:id",
-
       auth,
       SoalController.deleteSoal
     );
