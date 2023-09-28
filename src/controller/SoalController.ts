@@ -228,85 +228,78 @@ class SoalController {
   }
 
   async deleteSoal(req: Request, res: Response): Promise<any> {
-    try {
-      switch (req.params.category) {
-        case "c1":
-          {
-            const result = await C1Model.findOneAndDelete({
-              _id: req.query.id,
-            });
-            res.status(200).json({
-              msg: `delete soal ${req.params.category} berhasil`,
-              data: result,
-            });
-          }
-          break;
-        case "c2":
-          {
-            const result = await C2Model.findOneAndDelete({
-              _id: req.params.id,
-            });
-            res.status(200).json({
-              msg: `delete soal ${req.params.category} berhasil`,
-              data: result,
-            });
-          }
-          break;
-        case "c3":
-          {
-            const result = await C3Model.findOneAndDelete({
-              _id: req.params.id,
-            });
-            res.status(200).json({
-              msg: `delete soal ${req.params.category} berhasil`,
-              data: result,
-            });
-          }
-          break;
-        case "c4":
-          {
-            const result = await C4Model.findOneAndDelete({
-              _id: req.params.id,
-            });
-            res.status(200).json({
-              msg: `delete soal ${req.params.category} berhasil`,
-              data: result,
-            });
-          }
-          break;
-        case "c5":
-          {
-            const result = await C5Model.findOneAndDelete({
-              _id: req.params.id,
-            });
-            res.status(200).json({
-              msg: `delete soal ${req.params.category} berhasil`,
-              data: result,
-            });
-          }
-          break;
-        case "c6":
-          {
-            const result = await C6Model.findOneAndDelete({
-              _id: req.params.id,
-            });
-            res.status(200).json({
-              msg: `delete soal ${req.params.category} berhasil`,
-              data: result,
-            });
-          }
-          break;
-        default:
-          res.status(404).json({
-            msg: "wrong kategori",
+    switch (req.params.category) {
+      case "c1":
+        {
+          const result = await C1Model.findOneAndDelete({
+            _id: req.query.id,
           });
-          break;
-      }
-    } catch (error) {
-      return res.status(503).json({
-        msg: `error`,
-        data: [],
-      });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c2":
+        {
+          const result = await C2Model.findOneAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c3":
+        {
+          const result = await C3Model.findOneAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c4":
+        {
+          const result = await C4Model.findOneAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c5":
+        {
+          const result = await C5Model.findOneAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      case "c6":
+        {
+          const result = await C6Model.findOneAndDelete({
+            _id: req.params.id,
+          });
+          res.status(200).json({
+            msg: `delete soal ${req.params.category} berhasil`,
+            data: result,
+          });
+        }
+        break;
+      default:
+        res.status(404).json({
+          msg: "wrong kategori",
+        });
+        break;
     }
   }
 
