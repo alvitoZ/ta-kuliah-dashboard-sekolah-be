@@ -432,13 +432,13 @@ class SoalController {
           (10 / (data.benar.length + data.salah.length)) * data.benar.length;
         await NilaiModel.insertMany({
           nama: fullname,
-          nilai: nilai,
+          nilai: Number(nilai.toFixed(2)),
           kategori: input[0].kategori,
         });
         return res.status(200).json({
           total_benar: data.benar.length,
           total_salah: data.salah.length,
-          nilai: nilai,
+          nilai: Number(nilai.toFixed(2)),
         });
       }
     } catch (error) {
