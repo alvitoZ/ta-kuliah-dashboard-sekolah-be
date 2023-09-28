@@ -125,7 +125,7 @@ class MateriController {
         });
       }
 
-      const postingan = await MateriModel.findOneAndDelete({
+      const postingan = await MateriModel.findByIdAndDelete({
         _id: req.params.id,
       });
 

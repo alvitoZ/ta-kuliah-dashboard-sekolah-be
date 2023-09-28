@@ -231,7 +231,7 @@ class SoalController {
     switch (req.params.category) {
       case "c1":
         {
-          const result = await C1Model.findOneAndDelete({
+          const result = await C1Model.findByIdAndDelete({
             _id: req.query.id,
           });
           res.status(200).json({
@@ -242,7 +242,7 @@ class SoalController {
         break;
       case "c2":
         {
-          const result = await C2Model.findOneAndDelete({
+          const result = await C2Model.findByIdAndDelete({
             _id: req.params.id,
           });
           res.status(200).json({
@@ -253,7 +253,7 @@ class SoalController {
         break;
       case "c3":
         {
-          const result = await C3Model.findOneAndDelete({
+          const result = await C3Model.findByIdAndDelete({
             _id: req.params.id,
           });
           res.status(200).json({
@@ -264,7 +264,7 @@ class SoalController {
         break;
       case "c4":
         {
-          const result = await C4Model.findOneAndDelete({
+          const result = await C4Model.findByIdAndDelete({
             _id: req.params.id,
           });
           res.status(200).json({
@@ -275,7 +275,7 @@ class SoalController {
         break;
       case "c5":
         {
-          const result = await C5Model.findOneAndDelete({
+          const result = await C5Model.findByIdAndDelete({
             _id: req.params.id,
           });
           res.status(200).json({
@@ -286,7 +286,7 @@ class SoalController {
         break;
       case "c6":
         {
-          const result = await C6Model.findOneAndDelete({
+          const result = await C6Model.findByIdAndDelete({
             _id: req.params.id,
           });
           res.status(200).json({
