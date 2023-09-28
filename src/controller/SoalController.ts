@@ -228,10 +228,12 @@ class SoalController {
   }
 
   async deleteSoal(req: Request, res: Response): Promise<any> {
+    const result = await C1Model.findByIdAndDelete({
+      _id: req.params.id,
+    });
     res.status(200).json({
       msg: `delete soal ${req.params.category} berhasil`,
-      data: req.params.category,
-      c: req.params.id,
+      data: result,
     });
     // switch (req.params.category) {
     //   case "c1":
