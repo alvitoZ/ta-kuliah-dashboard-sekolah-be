@@ -238,6 +238,14 @@ class SoalController {
     switch (req.params.category) {
       case "c1":
         {
+          const check = await C1Model.findOne({
+            _id: req.query.id,
+          });
+          if (!check) {
+            return res.status(404).json({
+              msg: `soal not found`,
+            });
+          }
           const result = await C1Model.findByIdAndDelete({
             _id: req.query.id,
           });
