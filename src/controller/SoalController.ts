@@ -428,19 +428,17 @@ class SoalController {
         });
       } else {
         const data = TotalJawabanBenar(Data);
+        const nilai =
+          (10 / (data.benar.length + data.salah.length)) * data.benar.length;
         await NilaiModel.insertMany({
           nama: fullname,
-          nilai:
-            (10 / data.benar.length + data.salah.length) *
-            (data.benar.length + data.salah.length),
+          nilai: nilai,
           kategori: input[0].kategori,
         });
         return res.status(200).json({
           total_benar: data.benar.length,
           total_salah: data.salah.length,
-          nilai:
-            (10 / data.benar.length + data.salah.length) * data.benar.length,
-          kategori: input[0].kategori,
+          nilai: nilai,
         });
       }
     } catch (error) {
