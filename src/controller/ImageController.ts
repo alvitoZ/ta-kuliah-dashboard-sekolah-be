@@ -72,6 +72,26 @@ class ImageController {
       });
     }
   }
+
+  async deleteImageFile(req: Request, res: Response): Promise<any> {
+    const { role } = res.locals.user;
+    try {
+      if (role === "siswa") {
+        return res.status(403).json({
+          msg: "siswa cannot access deleteImage",
+        });
+      }
+      RemoveImage(req.params.image);
+      return res.status(200).json({
+        data: "success",
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
+      });
+    }
+  }
 }
 
 export default new ImageController();
