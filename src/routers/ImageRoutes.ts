@@ -1,7 +1,8 @@
-import { Router, Response, Request } from "express";
+import express, { Router, Response, Request } from "express";
 import IRouter from "./RouterInterface";
 import { auth } from "../middleware/AuthMiddleware";
 import ImageController from "../controller/ImageController";
+import path from "path";
 
 class ImageRoutes implements IRouter {
   public router: Router;
@@ -17,6 +18,7 @@ class ImageRoutes implements IRouter {
     this.router.post("/", auth, ImageController.postImage);
     this.router.delete("/:id", auth, ImageController.deleteImage);
     this.router.delete("/file/:image", auth, ImageController.deleteImageFile);
+    this.router.get("/images"); //gambar
   }
 }
 

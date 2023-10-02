@@ -14,6 +14,7 @@ import SoalRoutes from "./routers/SoalRoutes";
 import MateriRoutes from "./routers/MateriRoutes";
 import ImageRoutes from "./routers/ImageRoutes";
 import { Config } from "./config/Config";
+import NilaiRoutes from "./routers/NilaiRoutes";
 
 mongoose.set("strictQuery", false);
 
@@ -51,6 +52,7 @@ class App {
     //     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
     //   );
     //   res.setHeader("Access-Control-Allow-Headers", "content-type");
+    //   res.setHeader("ngrok-skip-browser-warning", "true");
     //   next();
     // });
     this.app.use(express.urlencoded({ extended: true }));
@@ -72,6 +74,7 @@ class App {
     this.app.use("/api/v1/soal", SoalRoutes); //soal
     this.app.use("/api/v1/materi", MateriRoutes); //materi
     this.app.use("/api/v1/image", ImageRoutes); //image
+    this.app.use("/api/v1/nilai", NilaiRoutes); //nilai
   }
 }
 
