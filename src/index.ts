@@ -51,8 +51,8 @@ class App {
     this.app.use(
       "/images",
       function (req, res, next) {
-        req.headers["ngrok-skip-browser-warning"] = "1";
-        next();
+        req.headers["ngrok-skip-browser-warning"] = "true";
+        return next();
       },
       express.static(path.join("images"))
     );
