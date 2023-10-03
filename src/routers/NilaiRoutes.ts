@@ -20,7 +20,7 @@ class NilaiRoutes implements IRouter {
     this.router.get("/:id", auth, NilaiController.showNilaiById);
     this.router.put("/:parentId/:id", auth, NilaiController.editNilai);
     this.router.delete("/:id", auth, NilaiController.deleteNilaiById);
-    this.router.get("/nilai-grafik", auth, NilaiController.getNilaiForGrafik);
+    this.router.get("/nilai-grafik", NilaiController.getNilaiForGrafik);
     //end nilai
   }
 }
