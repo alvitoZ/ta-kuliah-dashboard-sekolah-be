@@ -161,8 +161,9 @@ class NilaiController {
   };
 
   async getNilaiForGrafik(req: Request, res: Response): Promise<any> {
+    const { fullname } = res.locals.user;
     try {
-      const result = await NilaiModel.find();
+      const result = await NilaiModel.find({ student_name: fullname });
       result.reverse();
       return res.status(200).json({
         data: result[0],
