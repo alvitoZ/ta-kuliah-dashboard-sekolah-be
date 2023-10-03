@@ -149,17 +149,6 @@ class NilaiController {
         }
       );
 
-      // await NilaiModel.updateOne(
-      //   { _id: req.params.parentId },
-      //   {
-      //     $push: {
-      //       nilai: {
-      //         nilai: nilai,
-      //       },
-      //     },
-      //   }
-      // );
-
       return res.status(200).json({
         msg: `nilai berhasil di edit`,
       });
@@ -171,20 +160,19 @@ class NilaiController {
     }
   };
 
-  // async getNilaiForGrafik(req: Request, res: Response): Promise<any> {
-  //   try {
-  //     const result = await NilaiModel.find();
-  //     // result.reverse();
-  //     return res.status(200).json({
-  //       data: result.reverse().slice(0, 6),
-  //     });
-  //   } catch (error) {
-  //     return res.status(503).json({
-  //       msg: `error`,
-  //       data: [],
-  //     });
-  //   }
-  // }
+  async getNilaiForGrafik(req: Request, res: Response): Promise<any> {
+    try {
+      const result = await NilaiModel.find();
+      return res.status(200).json({
+        data: result.reverse().slice(0, 6),
+      });
+    } catch (error) {
+      return res.status(503).json({
+        msg: `error`,
+        data: [],
+      });
+    }
+  }
 }
 
 export default new NilaiController();
